@@ -1,0 +1,32 @@
+{
+  "name" : "mi_job.py",
+  "description" : "",
+  "role" : "arn:aws:iam::969326134125:role/LabRole",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "pythonshell",
+    "scriptLocation" : "s3://aws-glue-assets-969326134125-us-east-1/scripts/mi_job.py",
+    "pythonVersion" : "3.9"
+  },
+  "defaultArguments" : {
+    "--enable-job-insights" : "true",
+    "--job-language" : "python",
+    "--TempDir" : "s3://aws-glue-assets-969326134125-us-east-1/temporary/",
+    "--enable-glue-datacatalog" : "true",
+    "library-set" : "analytics"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 0,
+  "timeout" : 2880,
+  "maxCapacity" : 0.0625,
+  "glueVersion" : "3.0",
+  "executionClass" : "STANDARD",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "big_data_glue",
+    "branch" : "master",
+    "folder" : "testing_github"
+  }
+}
