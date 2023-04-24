@@ -35,5 +35,6 @@ jobs:
       
       - name: Execute flake8 test
         run: |
+          pip install flake8
           flake8 scraper/scraper.py
           flake8 soup_to_csv/soup_to_csv.py
